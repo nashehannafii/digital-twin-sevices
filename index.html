@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Sensor Data - Garmin</title>
+</head>
+
+<body>
+    <h1>Real-Time Sensor Data - Garmin</h1>
+
+    <!-- Heart Rate -->
+    <h2>Heart Rate:</h2>
+    <div id="heart-rate"></div>
+
+    <!-- SpO2 -->
+    <h2>SpO2:</h2>
+    <div id="spo2"></div>
+
+    <!-- Accelerometer -->
+    <h2>Accelerometer:</h2>
+    <div id="accelerometer"></div>
+
+    <!-- Barometric Altimeter -->
+    <!-- <h2>Barometric Altimeter:</h2>
+    <div id="barometric-altimeter"></div> -->
+
+    <!-- Thermometer -->
+    <h2>Thermometer:</h2>
+    <div id="thermometer"></div>
+
+    <!-- Respiration Sensor -->
+    <h2>Respiration Rate:</h2>
+    <div id="respiration-rate"></div>
+
+    <!-- ECG -->
+    <h2>ECG:</h2>
+    <div id="ecg"></div>
+
+    <script>
+        const ws = new WebSocket("ws://localhost:4000");
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+
+            // Log the data for debugging
+            console.log(data);
+
+            // Update the respective sections based on sensor type
+            if (data.sensor === "Heart Rate") {
+                document.getElementById("heart-rate").innerText =
+                    `Timestamp: ${data.timestamp}, Heart Rate: ${data.heart_rate_bpm} BPM`;
+            } else if (data.sensor === "SpO2") {
+                document.getElementById("spo2").innerText =
+                    `Timestamp: ${data.timestamp}, SpO2: ${data.spo2_percentage}%, Pulse: ${data.pulse_bpm} BPM`;
+            } else if (data.sensor === "Accelerometer") {
+                document.getElementById("accelerometer").innerText =
+                    `Timestamp: ${data.timestamp}, X: ${data.x_axis}, Y: ${data.y_axis}, Z: ${data.z_axis}`;
+            } else if (data.sensor === "Barometric Altimeter") {
+                document.getElementById("barometric-altimeter").innerText =
+                    `Timestamp: ${data.timestamp}, Altitude: ${data.altitude_m} meters, Pressure: ${data.pressure_hpa} hPa`;
+            } else if (data.sensor === "Thermometer") {
+                document.getElementById("thermometer").innerText =
+                    `Timestamp: ${data.timestamp}, Temperature: ${data.temperature_celsius} °C`;
+            } else if (data.sensor === "Respiration") {
+                document.getElementById("respiration-rate").innerText =
+                    `Timestamp: ${data.timestamp}, Respiration Rate: ${data.respiration_rate_bpm} BPM`;
+            } else if (data.sensor === "ECG") {
+                document.getElementById("ecg").innerText =
+                    `Timestamp: ${data.timestamp}, Heart Rate: ${data.heart_rate_bpm} BPM, ECG Wave: ${data.ecg_wave}`;
+            }
+        };
+
+        ws.onopen = () => {
+            console.log("Connected to WebSocket server");
+        };
+
+        ws.onclose = () => {
+            console.log("Disconnected from WebSocket server");
+        };
+    </script>
+</body>
+
+</html>

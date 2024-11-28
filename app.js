@@ -1,42 +1,19 @@
-require("dotenv").config(); // Load konfigurasi dari .env
-
 const express = require("express");
-const mysql = require("mysql2");
+const appConfig = require("./config/config");
+const setupWebSocketServer = require("./routes/route");
 
 const app = express();
+const { PORT, WS_PORT } = appConfig;
 
-// Mengambil konfigurasi dari .env
-const PORT = process.env.PORT || 3000;
-const dbConfig = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-};
-
-// Endpoint 1: Cek koneksi ke database
-app.get("/check-db", (req, res) => {
-  const connection = mysql.createConnection(dbConfig);
-  connection.connect((err) => {
-    if (err) {
-      res.status(500).json({
-        status: "error",
-        message: "Database connection failed",
-        error: err.message,
-      });
-    } else {
-      res.json({ status: "success", message: "Database connection successful" });
-    }
-    connection.end();
-  });
+// Endpoint HTTP biasa (opsional untuk debugging)
+app.get("/", (req, res) => {
+  res.send("WebSocket and HTTP server running!");
 });
 
-// Endpoint 2: Hello World
-app.get("/hello", (req, res) => {
-  res.json({ message: "Hello World!" });
-});
+// Jalankan WebSocket Server
+setupWebSocketServer(WS_PORT);
 
-// Menjalankan server
+// Jalankan server HTTP
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`HTTP server running at http://localhost:${PORT}`);
 });
