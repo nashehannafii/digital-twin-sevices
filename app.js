@@ -1,14 +1,13 @@
 const express = require("express");
 const appConfig = require("./config/config");
-const setupWebSocketServer = require("./routes/route");
+const setupWebSocketServer = require("./routes/webSocket");
+const routes = require("./routes/route");
 
 const app = express();
 const { PORT, WS_PORT } = appConfig;
 
-// Endpoint HTTP biasa (opsional untuk debugging)
-app.get("/", (req, res) => {
-  res.send("WebSocket and HTTP server running!");
-});
+// Gunakan routes yang sudah dipindahkan ke file terpisah
+app.use(routes);
 
 // Jalankan WebSocket Server
 setupWebSocketServer(WS_PORT);

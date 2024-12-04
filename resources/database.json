@@ -1,0 +1,89 @@
+{
+    "heartDigitalTwin": {
+        "physicalObject": {
+            "id": "nasheh_heart_001",
+            "name": "Nasheh's Heart",
+            "type": "Biological Organ",
+            "dimensions": {
+                "weight": {
+                    "value": 300,
+                    "unit": "gram"
+                },
+                "size": {
+                    "x": 12,
+                    "y": 6,
+                    "z": 6,
+                    "unit": "cm"
+                }
+            },
+            "location": "Chest cavity",
+            "status": "Normal"
+        },
+        "digitalModel": {
+            "geometry": {
+                "modelId": "geo_heart_v1",
+                "format": [
+                    "3D CAD",
+                    "FBX"
+                ],
+                "resolution": "High"
+            },
+            "simulation": {
+                "type": "Cardiac Cycle",
+                "parameters": {
+                    "heartbeatRate": {
+                        "value": 72,
+                        "unit": "bpm"
+                    },
+                    "strokeVolume": {
+                        "value": 70,
+                        "unit": "ml"
+                    },
+                    "cardiacOutput": {
+                        "value": 5,
+                        "unit": "mL/min"
+                    }
+                }
+            }
+        },
+        "connection": {
+            "realTimeMonitoring": true,
+            "device": {
+                "id": "sensor_heart_01",
+                "type": "ECG",
+                "connectivity": "Bluetooth"
+            },
+            "latency": {
+                "value": 50,
+                "unit": "ms"
+            }
+        },
+        "data": {
+            "historicalFile": "historical_data.json",
+            "realTime": {
+                "heartbeatRate": 76,
+                "bloodPressure": "123/83 mmHg",
+                "oxygenSaturation": "99%",
+                "bodyTemperature": "36.9°C"
+            }
+        },
+        "service": {
+            "alerts": {
+                "type": "Email",
+                "thresholds": {
+                    "lowHeartRate": 60,
+                    "highHeartRate": 100,
+                    "lowOxygenSaturation": "90%",
+                    "highBodyTemperature": "37.5°C"
+                }
+            },
+            "predictiveAnalysis": {
+                "model": "AI-Predict-v1",
+                "predictions": {
+                    "riskOfArrhythmia": "Low",
+                    "expectedHeartRateTrend": "Stable"
+                }
+            }
+        }
+    }
+}

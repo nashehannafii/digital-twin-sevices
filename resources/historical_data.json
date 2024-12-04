@@ -1,0 +1,256 @@
+{
+    "historical": [
+        {
+            "timestamp": "2024-12-03T14:00:00.000Z",
+            "heartbeatRate": 116,
+            "bloodPressure": "125/70 mmHg",
+            "oxygenSaturation": "97%",
+            "bodyTemperature": "36.9°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:05:00.000Z",
+            "heartbeatRate": 93,
+            "bloodPressure": "116/84 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "37.1°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:10:00.000Z",
+            "heartbeatRate": 128,
+            "bloodPressure": "125/83 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "37.4°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:15:00.000Z",
+            "heartbeatRate": 85,
+            "bloodPressure": "127/72 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "37.3°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:20:00.000Z",
+            "heartbeatRate": 132,
+            "bloodPressure": "123/88 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "36.8°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:25:00.000Z",
+            "heartbeatRate": 101,
+            "bloodPressure": "124/77 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "37.3°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:30:00.000Z",
+            "heartbeatRate": 95,
+            "bloodPressure": "117/88 mmHg",
+            "oxygenSaturation": "95%",
+            "bodyTemperature": "36.7°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:35:00.000Z",
+            "heartbeatRate": 110,
+            "bloodPressure": "130/72 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "36.5°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:40:00.000Z",
+            "heartbeatRate": 84,
+            "bloodPressure": "122/84 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "37.0°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:45:00.000Z",
+            "heartbeatRate": 135,
+            "bloodPressure": "127/74 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "36.9°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:50:00.000Z",
+            "heartbeatRate": 95,
+            "bloodPressure": "126/90 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "37.2°C"
+        },
+        {
+            "timestamp": "2024-12-03T14:55:00.000Z",
+            "heartbeatRate": 68,
+            "bloodPressure": "120/88 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "37.4°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:00:00.000Z",
+            "heartbeatRate": 113,
+            "bloodPressure": "115/74 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "37.4°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:05:00.000Z",
+            "heartbeatRate": 80,
+            "bloodPressure": "125/83 mmHg",
+            "oxygenSaturation": "95%",
+            "bodyTemperature": "37.2°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:10:00.000Z",
+            "heartbeatRate": 130,
+            "bloodPressure": "113/87 mmHg",
+            "oxygenSaturation": "97%",
+            "bodyTemperature": "37.5°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:15:00.000Z",
+            "heartbeatRate": 91,
+            "bloodPressure": "128/75 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "36.6°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:20:00.000Z",
+            "heartbeatRate": 72,
+            "bloodPressure": "116/72 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "37.3°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:25:00.000Z",
+            "heartbeatRate": 67,
+            "bloodPressure": "127/70 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "36.5°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:30:00.000Z",
+            "heartbeatRate": 72,
+            "bloodPressure": "129/76 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "37.0°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:35:00.000Z",
+            "heartbeatRate": 94,
+            "bloodPressure": "124/73 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "37.4°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:40:00.000Z",
+            "heartbeatRate": 109,
+            "bloodPressure": "124/83 mmHg",
+            "oxygenSaturation": "97%",
+            "bodyTemperature": "37.1°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:45:00.000Z",
+            "heartbeatRate": 66,
+            "bloodPressure": "125/78 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "36.9°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:50:00.000Z",
+            "heartbeatRate": 126,
+            "bloodPressure": "127/81 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "37.1°C"
+        },
+        {
+            "timestamp": "2024-12-03T15:55:00.000Z",
+            "heartbeatRate": 120,
+            "bloodPressure": "126/87 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "37.0°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:00:00.000Z",
+            "heartbeatRate": 126,
+            "bloodPressure": "127/81 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "37.3°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:05:00.000Z",
+            "heartbeatRate": 70,
+            "bloodPressure": "119/78 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "37.1°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:10:00.000Z",
+            "heartbeatRate": 113,
+            "bloodPressure": "124/72 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "37.2°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:15:00.000Z",
+            "heartbeatRate": 77,
+            "bloodPressure": "125/89 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "37.3°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:20:00.000Z",
+            "heartbeatRate": 100,
+            "bloodPressure": "118/89 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "36.9°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:25:00.000Z",
+            "heartbeatRate": 73,
+            "bloodPressure": "126/82 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "36.7°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:30:00.000Z",
+            "heartbeatRate": 85,
+            "bloodPressure": "120/80 mmHg",
+            "oxygenSaturation": "97%",
+            "bodyTemperature": "37.0°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:35:00.000Z",
+            "heartbeatRate": 68,
+            "bloodPressure": "124/83 mmHg",
+            "oxygenSaturation": "100%",
+            "bodyTemperature": "36.7°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:40:00.000Z",
+            "heartbeatRate": 104,
+            "bloodPressure": "120/86 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "37.3°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:45:00.000Z",
+            "heartbeatRate": 115,
+            "bloodPressure": "115/84 mmHg",
+            "oxygenSaturation": "98%",
+            "bodyTemperature": "36.5°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:50:00.000Z",
+            "heartbeatRate": 88,
+            "bloodPressure": "121/75 mmHg",
+            "oxygenSaturation": "99%",
+            "bodyTemperature": "36.9°C"
+        },
+        {
+            "timestamp": "2024-12-03T16:55:00.000Z",
+            "heartbeatRate": 122,
+            "bloodPressure": "124/75 mmHg",
+            "oxygenSaturation": "96%",
+            "bodyTemperature": "36.5°C"
+        }
+    ]
+}

@@ -10,7 +10,12 @@ module.exports.generateSpO2Data = function () {
     const spo2 = Math.floor(Math.random() * (99 - 94 + 1)) + 94;
     const pulse = Math.floor(Math.random() * (100 - 60 + 1)) + 60;
     const timestamp = new Date().toISOString();
-    return { sensor: "SpO2", timestamp, spo2_percentage: spo2, pulse_bpm: pulse };
+    return {
+        sensor: "SpO2",
+        timestamp,
+        spo2_percentage: spo2,
+        pulse_bpm: pulse
+    };
 }
 
 // GENERATE ACCELEROMETER
