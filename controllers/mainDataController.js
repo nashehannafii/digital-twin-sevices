@@ -27,6 +27,9 @@ const readJsonFileSync = (filePath) => {
 exports.checkCon = (req, res) => {
   const filePath = "./resources/database.json";
 
+  const config = require('.resources/database.json'); // File JSON akan dibaca sebagai object
+  console.log(`Tes Koneksi ${config}`);
+
   readJsonFile(filePath, (err, jsonData) => {
     if (err) {
       console.error("Gagal membaca file JSON:", err);
@@ -49,6 +52,8 @@ exports.getHdtIkhtisar = (req, res) => {
 exports.getRekapHarianPerJam = (req, res) => {
   const { date: qDate, month: qMonth } = req.query;
 
+  console.error(req.query);
+
   try {
     const historicalData = readJsonFileSync("./resources/historical_data.json");
     const groupedByHour = {};
@@ -64,13 +69,13 @@ exports.getRekapHarianPerJam = (req, res) => {
       const hour = new Date(entry.timestamp).getHours();
       const date = new Date(entry.timestamp).getDate();
       const month = new Date(entry.timestamp).getMonth();
-      
+
       if (date == qDate && month == qMonth) {
         groupedByHour[hour].heartbeatRateSum += parseInt(entry.heartbeatRate);
         groupedByHour[hour].count += 1;
       }
     });
-    
+
 
     for (const hour in groupedByHour) {
 
