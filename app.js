@@ -9,8 +9,8 @@ const { PORT, WS_PORT } = appConfig;
 // Gunakan routes yang sudah dipindahkan ke file terpisah
 app.use(routes);
 
-// Jalankan WebSocket Server
-setupWebSocketServer(WS_PORT);
+// // Jalankan WebSocket Server
+// setupWebSocketServer(WS_PORT);
 
 // Jalankan server HTTP
 app.listen(PORT, () => {
