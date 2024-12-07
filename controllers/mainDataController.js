@@ -16,8 +16,7 @@ const readJsonFile = (filePath, callback) => {
 
 const readJsonFileSync = (filePath) => {
   try {
-    const absolutePath = path.resolve(__dirname, filePath);
-    const data = fs.readFileSync(absolutePath, "utf-8");
+    const data = fs.readFileSync(filePath, "utf-8");
     return JSON.parse(data);
   } catch (error) {
     console.error("Gagal membaca file JSON:", error);
