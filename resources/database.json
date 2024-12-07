@@ -59,7 +59,13 @@
             }
         },
         "data": {
-            "historicalFile": "historical_data.json",
+            "historicalFile": [
+                "historical_data.json"
+            ],
+            "historyBerobat": [
+                "histori1.json",
+                "histori1.json"
+            ],
             "realTime": {
                 "heartbeatRate": 76,
                 "bloodPressure": "123/83 mmHg",

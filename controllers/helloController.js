@@ -1,6 +1,10 @@
 // routes/controllers/helloController.js
 
 exports.hello = (req, res) => {
-    res.send("Hello, World!");
-  };
-  
+  res.json({ message: "Hello, World!" });
+};
+
+
+exports.site = (req, res) => {
+  res.send("Path: ");
+};
