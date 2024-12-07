@@ -1,5 +1,5 @@
 const express = require("express");
-const appConfig = require("./config/config");
+const appConfig = require("../config/config");
 const setupWebSocketServer = require("./routes/webSocket");
 const routes = require("./routes/route");
 
