@@ -27,8 +27,8 @@ function generateHistoricalData(startTime, hours, intervalMinutes) {
     return data;
 }
 
-const startTime = '2024-12-03T14:00:00Z';
-const hours = 24;
+const startTime = '2024-12-01T00:00:00Z';
+const hours = 24 * 30;
 const intervalMinutes = 5;
 
 const historicalData = {
