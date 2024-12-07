@@ -1,18 +1,13 @@
-const express = require("express");
-const appConfig = require("./config/config");
-const setupWebSocketServer = require("./routes/webSocket");
-const routes = require("./routes/route");
+const express = require('express'); // Import Express
+const app = express(); // Buat instance aplikasi Express
 
-const app = express();
-const { PORT, WS_PORT } = appConfig;
+// Endpoint "/" untuk menampilkan "Hello, World!"
+app.get('/', (req, res) => {
+  res.json({ message: "Hello, World!" });
+});
 
-// Gunakan routes yang sudah dipindahkan ke file terpisah
-app.use(routes);
-
-// Jalankan WebSocket Server
-setupWebSocketServer(WS_PORT);
-
-// Jalankan server HTTP
+// Menjalankan server di port 3000
+const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`HTTP server running at http://localhost:${PORT}`);
+  console.log(`Server berjalan di http://localhost:${PORT}`);
 });
