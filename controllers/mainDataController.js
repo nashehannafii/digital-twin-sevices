@@ -27,7 +27,7 @@ const readJsonFileSync = (filePath) => {
 exports.checkCon = (req, res) => {
   const filePath = "./resources/database.json";
 
-  const config = require('.resources/database.json'); // File JSON akan dibaca sebagai object
+  const config = require('/resources/database.json'); // File JSON akan dibaca sebagai object
   console.log(`Tes Koneksi ${config}`);
 
   readJsonFile(filePath, (err, jsonData) => {
