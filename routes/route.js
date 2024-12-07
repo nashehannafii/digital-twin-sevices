@@ -11,7 +11,7 @@ router.get("/", helloController.site);
 router.get("/hello", helloController.hello);
 
 // Route: Cek Koneksi ke JSON
-router.get("/cek-koneksi", mainDataController.checkCon);
+router.post("/cek-koneksi", mainDataController.checkCon);
 
 // Route: Cek Data Historis
 router.get("/cek-data-histori", historyDataController.checkCon);
