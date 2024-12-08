@@ -18,7 +18,7 @@ router.get("/cek-data-histori", historyDataController.checkCon);
 
 router.get("/hdt-ikhtisar", mainDataController.getHdtIkhtisar);
 router.get("/rekap-harian-perjam", mainDataController.getRekapHarianPerJam);
-router.get("/rekap-mingguan-perhari", mainDataController.getRekapHarianPerPekan);
+router.get("/rekap-harian-perpekan", mainDataController.getRekapHarianPerPekan);
 // router.get("/rekap-bulanan-perhari", mainDataController.getRekapBulananPerHari);
 // router.get("/rekap-tahunan-perbulan", mainDataController.getRekapTahunanPerBulan);
 
