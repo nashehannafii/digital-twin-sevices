@@ -1,4 +1,3 @@
-// routes/controllers/cekKoneksiController.js
 const fs = require("fs");
 const readJsonFile = (filePath, callback) => {
   fs.readFile(filePath, "utf-8", (err, data) => {
@@ -97,3 +96,64 @@ exports.getRekapHarianPerJam = (req, res) => {
     res.status(500).send({ error: error.message });
   }
 };
+
+exports.getRekapHarianPerPekan = (req, res) => {
+  const { week: qWeek, month: qMonth } = req.query;
+
+  console.error(req.query);
+
+  try {
+    const historicalData = readJsonFileSync("./resources/historical_data.json");
+    const groupedByDay = {};
+
+    if (!qWeek || qWeek < 1 || qWeek > 4) {
+      return res.status(400).send({ error: "Pekan harus antara 1-4" });
+    }
+
+    const weekStart = (qWeek - 1) * 7 + 1; // Tanggal mulai
+    const weekEnd = qWeek * 7; // Tanggal akhir
+    
+    const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+    for (let i = weekStart; i <= weekEnd; i++) {
+      groupedByDay[i] = {
+        dayName: "", // Nama hari
+        averageHeartbeatRate: 0,
+      };
+    }
+
+    historicalData.historical.forEach((entry) => {
+      const date = new Date(entry.timestamp).getDate();
+      const month = new Date(entry.timestamp).getMonth() +1;
+      const day = new Date(entry.timestamp).getDay(); // Hari dalam pekan (0-6)
+    
+      if (date >= weekStart && date <= weekEnd && month == qMonth) {
+        
+        const currentDay = date;
+        groupedByDay[currentDay].dayName = daysOfWeek[day];
+        if (!groupedByDay[currentDay].heartbeatRateSum) {
+          groupedByDay[currentDay].heartbeatRateSum = 0;
+          groupedByDay[currentDay].count = 0;
+        }
+        groupedByDay[currentDay].heartbeatRateSum += parseInt(entry.heartbeatRate);
+        groupedByDay[currentDay].count += 1;
+      }
+    });
+
+    for (const day in groupedByDay) {
+      const data = groupedByDay[day];
+      if (data.heartbeatRateSum) {
+        const average = data.heartbeatRateSum / data.count;
+        data.averageHeartbeatRate = parseFloat(average.toFixed(2));
+      }
+      // Hapus properti tambahan
+      delete data.heartbeatRateSum;
+      delete data.count;
+    }
+
+    res.send({ message: `Rekap Harian Per Pekan ${qWeek}`, data: groupedByDay });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+};
+
