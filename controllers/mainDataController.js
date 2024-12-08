@@ -48,7 +48,8 @@ exports.getHdtIkhtisar = (req, res) => {
 exports.getRekapHarianPerJam = (req, res) => {
   const { date: qDate, month: qMonth } = req.query;
 
-  console.error(req.query);
+  const fDate = qDate;
+  const fMonth = qMonth - 1;
 
   try {
     const historicalData = readJsonFileSync("./resources/historical_data.json");
@@ -66,7 +67,7 @@ exports.getRekapHarianPerJam = (req, res) => {
       const date = new Date(entry.timestamp).getDate();
       const month = new Date(entry.timestamp).getMonth();
 
-      if (date == qDate && month == qMonth) {
+      if (date == fDate && month == fMonth) {
         groupedByHour[hour].heartbeatRateSum += parseInt(entry.heartbeatRate);
         groupedByHour[hour].count += 1;
       }
@@ -100,19 +101,20 @@ exports.getRekapHarianPerJam = (req, res) => {
 exports.getRekapHarianPerPekan = (req, res) => {
   const { week: qWeek, month: qMonth } = req.query;
 
-  console.error(req.query);
+  const fWeek = qWeek;
+  const fMonth = qMonth - 1;
 
   try {
     const historicalData = readJsonFileSync("./resources/historical_data.json");
     const groupedByDay = {};
 
-    if (!qWeek || qWeek < 1 || qWeek > 4) {
+    if (!fWeek || fWeek < 1 || fWeek > 4) {
       return res.status(400).send({ error: "Pekan harus antara 1-4" });
     }
 
-    const weekStart = (qWeek - 1) * 7 + 1; // Tanggal mulai
-    const weekEnd = qWeek * 7; // Tanggal akhir
-    
+    const weekStart = (fWeek - 1) * 7 + 1; // Tanggal mulai
+    const weekEnd = fWeek * 7; // Tanggal akhir
+
     const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 
     for (let i = weekStart; i <= weekEnd; i++) {
@@ -124,11 +126,11 @@ exports.getRekapHarianPerPekan = (req, res) => {
 
     historicalData.historical.forEach((entry) => {
       const date = new Date(entry.timestamp).getDate();
-      const month = new Date(entry.timestamp).getMonth() +1;
+      const month = new Date(entry.timestamp).getMonth();
       const day = new Date(entry.timestamp).getDay(); // Hari dalam pekan (0-6)
-    
-      if (date >= weekStart && date <= weekEnd && month == qMonth) {
-        
+
+      if (date >= weekStart && date <= weekEnd && month == fMonth) {
+
         const currentDay = date;
         groupedByDay[currentDay].dayName = daysOfWeek[day];
         if (!groupedByDay[currentDay].heartbeatRateSum) {
